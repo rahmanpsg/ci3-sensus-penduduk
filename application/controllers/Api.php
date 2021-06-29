@@ -314,6 +314,10 @@ class Api extends RestController
         $simpan = $this->db->insert('tbl_kematian', $data);
 
         if ($simpan) {
+            // Hapus penduduk di data KK
+            $this->Model->deletePendudukByKematian($data['nik']);
+
+            // 
             $this->response(['error' => false, 'message' => 'Data berhasil disimpan', 'data' => $data], 200);
         }
         $this->response(['error' => true, 'message' => 'Data gagal disimpan'], 200);

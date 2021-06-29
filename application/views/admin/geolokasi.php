@@ -65,6 +65,7 @@
                                     <thead class="bg-secondary text-white">
                                         <tr>
                                             <th data-field="kategori">#</th>
+                                            <th data-field="nik">NIK</th>
                                             <th data-field="nama">Nama</th>
                                         </tr>
                                     </thead>
@@ -189,6 +190,9 @@
 
                         // $('#kk').attr('disabled', true).selectpicker('refresh')
                         $('#kk').attr('disabled', true).val(val).selectpicker('refresh')
+
+                        this.infowindow.setContent(this.marker.getPosition().toString());
+                        this.infowindow.open(this.map, this.marker);
                     }
 
 
@@ -201,6 +205,8 @@
                         }
                     }).then(res => {
                         const {
+                            kepala_keluarga: nik_kepala,
+                            istri: nik_istri,
                             nama_kepala,
                             nama_istri,
                             anak
@@ -208,16 +214,19 @@
 
                         const data = [{
                             kategori: '<b>Kepala Keluarga</b>',
-                            nama: nama_kepala
+                            nama: nama_kepala,
+                            nik: nik_kepala
                         }, {
                             kategori: '<b>Istri</b>',
-                            nama: nama_istri
+                            nama: nama_istri,
+                            nik: nik_istri
                         }]
 
                         const dataAnak = anak.map((v, i) => {
                             return {
                                 kategori: `<b>Anak ke-${i+1}</b>`,
-                                nama: v.nama
+                                nama: v.nama,
+                                nik: v.nik
                             }
                         })
                         $('#table').bootstrapTable('hideLoading');

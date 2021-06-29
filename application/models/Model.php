@@ -41,6 +41,44 @@ class Model extends CI_Model
         return $res->result_array()[0]['total'];
     }
 
+    function deletePendudukByKematian($nik)
+    {
+        $this->db->select("kk, kepala_keluarga, istri, anak");
+        $this->db->select("CASE 
+                            WHEN kepala_keluarga = $nik THEN 'kepala_keluarga' 
+                            WHEN istri = $nik THEN 'istri'
+                            WHEN JSON_SEARCH(anak, 'one', '{$nik}') IS NOT NULL THEN 'anak'
+                            END as status");
+        $this->db->where('kepala_keluarga', $nik);
+        $this->db->or_where('istri', $nik);
+        $this->db->or_where("JSON_SEARCH(anak, 'one', '{$nik}') IS NOT NULL");
+        $this->db->limit('1');
+        $data = $this->db->get('tbl_kk')->result()[0];
+
+        if ($data->status == null) {
+            return false;
+        }
+
+        if ($data->status == 'anak') {
+            $arrAnak = json_decode($data->anak);
+            $newArrAnak = array_filter($arrAnak, function ($v) use ($nik) {
+                return $v != $nik;
+            });
+
+            $data->anak = json_encode(array_values($newArrAnak));
+        } else {
+            $data->{$data->status} = null;
+        }
+
+        unset($data->status);
+
+        // update data
+        $this->db->where('kk', $data->kk);
+        $update = $this->db->update('tbl_kk', $data);
+
+        return $update;
+    }
+
     function createDataAnak($data)
     {
         $arr = [];
