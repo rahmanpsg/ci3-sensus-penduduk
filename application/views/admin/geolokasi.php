@@ -120,7 +120,7 @@
                     this.infowindow = new google.maps.InfoWindow();
 
                     new google.maps.KmlLayer({
-                        url: 'www.malproperty.id/assets/malimpung.kmz', //malimpung.kml
+                        url: 'https://docs.google.com/uc?authuser=0&id=1fwT4GY7iueRe7f2zWOF99zCX-4nEkd4Z', //malimpung.kml
                         map: this.map
                     });
                 },
