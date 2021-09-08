@@ -1,0 +1,444 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.5
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:3306
+-- Waktu pembuatan: 08 Sep 2021 pada 13.25
+-- Versi server: 10.3.16-MariaDB
+-- Versi PHP: 7.3.23
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `id15812865_db_sensus`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_kelahiran`
+--
+
+CREATE TABLE `tbl_kelahiran` (
+  `id` varchar(10) NOT NULL,
+  `kk` varchar(16) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `jenis_kelamin` varchar(25) NOT NULL,
+  `tempat_lahir` text NOT NULL,
+  `tanggal_lahir` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tbl_kelahiran`
+--
+
+INSERT INTO `tbl_kelahiran` (`id`, `kk`, `nama`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`) VALUES
+('_0p7Jif0Jn', '7315052307150001', 'puri', 'Laki-laki', 'PINRANG', '1986-12-31'),
+('_8Q7DiHonT', '7315052601170004', 'JUMADI', 'Laki-laki', 'ABBOKONGANG', '1985-06-05'),
+('_Bef85gfSt', '7315053107091425', 'ABD.GANING', 'Laki-laki', 'MALIMPUNG', '1933-12-31'),
+('_BhrfotyWe', '7315050407120005', 'MUHAMMAD IDRIS', 'Laki-laki', 'MALIMPUNG', '1983-12-31'),
+('_CPFoxLqP1', '7315110701150002', 'ROSMAN', 'Laki-laki', 'PINRANG', '1992-07-14'),
+('_cvqSz1Xm5', '7315052903190003', 'HANI', 'Laki-laki', 'BOLA PATADDOLO', '1973-12-31'),
+('_GVU11HEB2', '7315053107091483', 'SAFRI', 'Laki-laki', 'MALIMPUNG', '1981-10-26'),
+('_HaoydkV58', '7315053103100003', 'ZAINUDDIN', 'Laki-laki', 'POLEWALI', '1966-01-01'),
+('_hhILJkvaH', '7315052801150001', 'SUDIRMAN', 'Laki-laki', 'PAJALELE DUSUN. PAJALELE', '1989-04-24'),
+('_ivK6p5PA3', '7315052607170003', 'MY HABIBIE,S.Pd', 'Laki-laki', 'MALIMPUNG', '1986-07-10'),
+('_J5UT1Udgc', '7315053112190005', 'AWALUDDIN.S.KOM', 'Laki-laki', 'PINRANG', '1994-11-07'),
+('_JAnrMbfIH', '7315050109160001', 'MUSAKKAR', 'Laki-laki', 'PAJALELE', '1981-05-04'),
+('_JjPzCgZYN', '7315052402100002', 'ALINUR', 'Laki-laki', 'PINRANG', '1978-12-03'),
+('_KiN9Kwiwm', '7315052604120002', 'FAISAL', 'Laki-laki', 'PAJALELE', '1984-01-27'),
+('_kU86HRbti', '7315053107091753', 'IS', 'Laki-laki', 'MALIMPUNG', '1963-12-31'),
+('_mmgf5CtkF', '7315053107091242', 'SUDARMAN', 'Laki-laki', 'PAJALELE DUSUNG. PAJALELE', '1978-01-08'),
+('_npRy7r8SQ', '7315053107091279', 'GENDA', 'Laki-laki', 'MALIMPUNG', '1965-12-31'),
+('_NWhgaR5rU', '7315050802180002', 'SAHRUL', 'Laki-laki', 'PALITA', '1999-07-03'),
+('_qcEvf8nP6', '7315042707160011', 'SYAMSUDDIN.M', 'Laki-laki', 'BUA BUA II', '1990-03-04'),
+('_RhmFshMAe', '7315053107091346', 'RAMLI', 'Laki-laki', 'MALIMPUNG DUSUN. MALIMPUNG', '1975-07-20'),
+('_TpsDn2zK0', '7315053107091495', 'AMANG SINI', 'Laki-laki', 'PAJALELE', '1956-01-07'),
+('_uXZn5M9ed', '7315053107091446', 'LA HAMU H. PABACCI', 'Laki-laki', 'PAJALELE', '1940-12-31'),
+('_WMjdd7haH', '7315052510100005', 'RAUF BIN LAHABA', 'Laki-laki', 'PINRANG', '1986-09-24'),
+('_WqHGDLRfK', '7315110508091333', 'BUSMAN', 'Laki-laki', 'PINRANG', '1973-08-18'),
+('_WxV3cfQLw', '7315050708180002', 'Raffasya Arfan', 'Laki-laki', 'Malimpung', '2020-04-07');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_kematian`
+--
+
+CREATE TABLE `tbl_kematian` (
+  `nik` varchar(16) NOT NULL,
+  `tanggal` date NOT NULL,
+  `tempat` text NOT NULL,
+  `penyebab` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_kk`
+--
+
+CREATE TABLE `tbl_kk` (
+  `kk` varchar(16) NOT NULL,
+  `kepala_keluarga` varchar(16) DEFAULT NULL,
+  `istri` varchar(16) DEFAULT NULL,
+  `anak` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tbl_kk`
+--
+
+INSERT INTO `tbl_kk` (`kk`, `kepala_keluarga`, `istri`, `anak`) VALUES
+('7315042707160011', '7315040304900003', '7315055210890003', '[\"7315045012190002\",\"7315046407160001\"]'),
+('7315050109160001', '7315050504810004', '7315050109160001', '[]'),
+('7315050407120005', '7315053112830059', '7315056012850003', '[\"7315051705090004\",\"7315052006150001\",\"7315052901180002\"]'),
+('7315050708180002', '7314080202840002', '7314085012950006', '[\"7314080206120002\",\"7315050704200001\"]'),
+('7315050802180002', '7315050703890009', '7315055807990002', '[\"7315056412180001\"]'),
+('7315052307150001', '7315053112860122', '7315056205900003', '[\"7315056103140002\"]'),
+('7315052402100002', '7315051203780003', '7315054605790002', '[\"7315051508100001\",\"7315054303160002\",\"7315055005060002\",\"7315056110020001\",\"7415054504040004\"]'),
+('7315052510100005', '7315052409560001', '7315055510580001', '[]'),
+('7315052601170004', '7314064605851001', '7315055708920002', '[\"7315052312150001\"]'),
+('7315052604120002', '7315052701840002', '3175054206880002', '[\"7315050504060003\",\"7315050602200001\",\"7315051506120003\"]'),
+('7315052607170003', '7315052607170003', '7315056906960001', '[\"7315054511170001\"]'),
+('7315052801150001', '7315052404890003', '7315117112950118', '[\"7315054906150001\",\"7315055003180002\"]'),
+('7315052903190003', '7315013112730047', '7315044304870003', '[\"7315040104140001\",\"7315044205090002\",\"7315051708200001\"]'),
+('7315053103100003', '7315050101660021', '7315054101690028', '[\"7315052503050004\"]'),
+('7315053107091242', '7315050108780002', '7315054505820003', '[\"7315050405170003\",\"7315052505090004\",\"7315055604190001\",\"7315056704130001\"]'),
+('7315053107091279', '7315053112650073', '7315057112670063', '[\"7315051606190001\",\"7315052103970001\",\"7315054909080002\"]'),
+('7315053107091346', '7315052007750003', '7315056202790001', '[\"7315050601000002\",\"7315052704180003\",\"7315056604020002\"]'),
+('7315053107091425', '7315053112330011', '7315057112480038', '[\"7315054410680001\"]'),
+('7315053107091446', '7315053112400079', '7315057112480037', '[]'),
+('7315053107091483', '7315052610810001', '7315056805810001', '[\"7315050601040001\",\"7315056812120001\"]'),
+('7315053107091495', '7315050107560001', '7315055001470002', '[]'),
+('7315053107091753', '7315053112630096', '7315055204640002', '[\"7315050211980001\",\"7315051910000001\"]'),
+('7315053112190005', '7315051107940001', '7315046309940003', '[\"7315055606200001\"]'),
+('7315110508091333', '7315111806730001', '7315116612810001', '[\"7315055811000001\",\"7315113101050002\",\"7315114608100002\"]'),
+('7315110701150002', '7315091406920002', '7315114406960001', '[\"7315115306150002\",\"7315116306160001\"]');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_lokasi`
+--
+
+CREATE TABLE `tbl_lokasi` (
+  `kk` varchar(16) NOT NULL,
+  `latitude` double NOT NULL,
+  `longitude` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tbl_lokasi`
+--
+
+INSERT INTO `tbl_lokasi` (`kk`, `latitude`, `longitude`) VALUES
+('7315042707160011', -3.7281655212266225, 119.73896385983277),
+('7315050109160001', -3.7273625610030137, 119.73195792988587),
+('7315050407120005', -3.7274482101284674, 119.73136784390259),
+('7315050708180002', -3.728527042249521, 119.73191705321193),
+('7315050802180002', -3.726870078369821, 119.74046589466343),
+('7315052307150001', -3.7281119905678612, 119.7332239325409),
+('7315052402100002', -3.727967457772921, 119.73231734589386),
+('7315052510100005', -3.7286794153849225, 119.73275186375427),
+('7315052601170004', -3.727373267144155, 119.73093064383316),
+('7315052607170003', -3.7285295296197773, 119.73444701985169),
+('7315052801150001', -3.727694451317657, 119.73251582936096),
+('7315052903190003', -3.7293753132454963, 119.73761202648926),
+('7315053103100003', -3.728347525442035, 119.73333122090149),
+('7315053107091242', -3.7274906174744085, 119.72991043216209),
+('7315053107091279', -3.7284171152791505, 119.73669471100617),
+('7315053107091346', -3.7269557275432375, 119.73834158734131),
+('7315053107091425', -3.7283421723774186, 119.73411979035187),
+('7315053107091446', -3.7277747473427185, 119.74004747227478),
+('7315053107091483', -3.7284224683433225, 119.73479034260559),
+('7315053107091495', -3.7278764556305855, 119.72979606941986),
+('7315053112190005', -3.7279621047059766, 119.73397226885605),
+('7315110508091333', -3.727282264940332, 119.73043979958344),
+('7315110701150002', -3.7276837451804345, 119.73049880818176);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_pendatang`
+--
+
+CREATE TABLE `tbl_pendatang` (
+  `nik` varchar(16) NOT NULL,
+  `tanggal` date NOT NULL,
+  `alamat` text NOT NULL,
+  `alasan` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_penduduk`
+--
+
+CREATE TABLE `tbl_penduduk` (
+  `nik` varchar(16) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `alamat` text NOT NULL,
+  `jenis_kelamin` varchar(25) NOT NULL,
+  `tempat_lahir` text NOT NULL,
+  `tanggal_lahir` date NOT NULL,
+  `agama` varchar(20) NOT NULL,
+  `pendidikan` varchar(15) NOT NULL,
+  `pekerjaan` varchar(25) NOT NULL,
+  `status` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tbl_penduduk`
+--
+
+INSERT INTO `tbl_penduduk` (`nik`, `nama`, `alamat`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `agama`, `pendidikan`, `pekerjaan`, `status`) VALUES
+('3175054206880002', 'NURLAELAH', 'PAJALELE DUSUN. PAJALELE', 'Perempuan', 'PAJALELE', '1988-02-05', 'Islam', 'SMA/SMK', 'PEGURUS RUMA TANGGA', 'Kawin'),
+('7314064605851001', 'JUMADI', 'TANA CELLA DUSUN. MALIMPUNG', 'Laki-laki', 'ABBOKONGANG', '1985-06-05', 'Islam', 'SMA/SMK', 'PETANI/PEKEBUN', 'Kawin'),
+('7314080202840002', 'Rudi Rahmat', 'Malimpung', 'Laki-laki', 'Basseang', '1984-02-02', 'Islam', 'Belum Sekolah', 'Tukang Batu', 'Kawin'),
+('7314080206120002', 'Raditya', 'Malimpung', 'Laki-laki', 'Sidrap', '2012-05-02', 'Islam', 'SD', 'Belum/Tidak Bekerja', 'Belum Kawin'),
+('7314085012950006', 'Susi Susianti', 'Malimpung', 'Perempuan', 'Bulukonyi', '1995-12-10', 'Islam', 'SD', 'IRT', 'Kawin'),
+('7315013112730047', 'HANI', 'PAJALELE DUSUNG. PAJALELE', 'Laki-laki', 'BOLA PATADDOLO', '1973-12-31', 'Islam', 'SMA/SMK', 'BELUM/TIDAK BEKERJA', 'Kawin'),
+('7315040104140001', 'ANDIKA HAMZAH', 'PAJALELE DUSUNG.PAJALELE', 'Laki-laki', 'PINRANG', '2014-10-04', 'Islam', 'SD', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315040304900003', 'SYAMSUDDIN.M', 'MALIMPUNG', 'Laki-laki', 'BUA BUA II', '1990-03-04', 'Islam', 'SMA/SMK', 'GURU', 'Kawin'),
+('7315044205090002', 'NURHALIZAH', 'PAJALELE DUSUNG.PAJALELE', 'Perempuan', 'PINRANG', '2009-02-05', 'Islam', 'SD', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315044304870003', 'RISMA', 'PAJALELE DUSUNG.PAJALELE', 'Perempuan', 'MALAYSIA', '1987-03-04', 'Islam', 'SMA/SMK', 'PEGURUS RUMA TANGGA', 'Kawin'),
+('7315045012190002', 'ARSY AISYAH SHOLEHAH', 'MALIMPUNG', 'Perempuan', 'PINRANG', '2019-10-12', 'Islam', 'SD', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315046309940003', 'NURUL WAHIDA SAFITRI SUDIRMAN,S.SOs.', 'MALIMPUNG DUSUN. MALIMPUNG', 'Perempuan', 'PINRANG', '1994-09-23', 'Islam', 'Diploma', 'KARYAWAN BUMN', 'Kawin'),
+('7315046407160001', 'NUR REZKY SHOLEHAH.S', 'MALIMPUNG', 'Perempuan', 'PINRANG', '2016-07-24', 'Islam', 'SD', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315050101660021', 'ZAINUDDIN', 'PAJALELE DUSUN. PAJALELE', 'Laki-laki', 'POLEWALI', '1966-01-01', 'Islam', 'Belum Sekolah', 'PETANI/PEKEBUN', 'Kawin'),
+('7315050107560001', 'AMANG SINI', 'TANA CELLA', 'Laki-laki', 'PAJALELE', '1956-01-07', 'Islam', 'SD', 'PETANI/PEKEBUN', 'Kawin'),
+('7315050108780002', 'SUDARMAN', 'PAJALELE DUSUNG.PAJALELE', 'Laki-laki', 'KAJANG', '1978-12-08', 'Islam', 'SMA/SMK', 'WIRASWASTA', 'Kawin'),
+('7315050109160001', 'HASNI', 'TANA CELLA DUSUN. MALIMPUNG', 'Perempuan', 'PAJALELE', '1983-05-11', 'Islam', 'SMA/SMK', 'PEGURUS RUMA TANGGA', 'Kawin'),
+('7315050211980001', 'MUH. IHSAN', 'PAJALELE DUSUN. MALIMPUNG', 'Laki-laki', 'UJUNG PANDANG', '1998-02-10', 'Islam', 'S1', 'PELAJAR/MAHASISWA', 'Belum Kawin'),
+('7315050405170003', 'WALID MAGZURA', 'PAJALELE DUSUNG. PAJALELE', 'Laki-laki', 'PINGRANG', '2017-04-05', 'Islam', 'Belum Sekolah', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315050504060003', 'FADLI FAISAL', 'PAJALELE DUSUN. PAJALELE', 'Laki-laki', 'PAJALELE', '2006-02-05', 'Islam', 'Belum Sekolah', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315050504810004', 'MUSAKKAR', 'TANA CELLA DUSUN. MALIMPUNG', 'Laki-laki', 'PAJALELE', '1981-05-04', 'Islam', 'SMA/SMK', 'PETANI/PEKEBUN', 'Kawin'),
+('7315050601000002', 'MUH. DAHLAN', 'MALIMPUNG DUSUN. MALIMPUNG', 'Laki-laki', 'MALIMPUNG', '2000-06-01', 'Islam', 'SD', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315050601040001', 'PUTRA AGUNG J', 'TANA CELLA', 'Laki-laki', 'MALIMPUNG', '2004-06-01', 'Islam', 'SMP', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315050602200001', 'ARKANA AHMAD FAISAL', 'PAJALELE DUSUN. PAJALELE', 'Laki-laki', 'PINRANG', '2020-06-02', 'Islam', 'Belum Sekolah', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315050703890009', 'SAHRUL', 'PALIPPI DUSUNG. PALIPPI', 'Laki-laki', 'PALITA', '1999-07-31', 'Islam', 'SMA/SMK', 'WIRASWASTA', 'Kawin'),
+('7315050704200001', 'Raffasya Arfan', 'Malimpung', 'Laki-laki', 'Pinrang', '2020-04-07', 'Islam', 'SD', 'Belum/Tidak Bekerja', 'Belum Kawin'),
+('7315051107940001', 'AWALUDDIN.S.KOM', 'MALIMPUNG DUSUN. MALIMPUNG', 'Laki-laki', 'PINRANG', '1994-11-07', 'Islam', 'Diploma', 'WIRASWASTA', 'Kawin'),
+('7315051203780003', 'ALINUR', 'MALIMPUNG DUSUN. MALIMPUNG', 'Laki-laki', 'PINRANG', '1978-12-03', 'Islam', 'SMA/SMK', 'WIRASWASTA', 'Kawin'),
+('7315051506120003', 'DHAFA FAISAL', 'PAJALELE DUSUN. PAJALELE', 'Laki-laki', 'PINRANG', '2012-02-15', 'Islam', 'Belum Sekolah', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315051508100001', 'ANUGRAH', 'MALIMPUNG DUSUN. MALIMPUNG', 'Laki-laki', 'PINRANG', '2010-08-15', 'Islam', 'Belum Sekolah', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315051606190001', 'ABYAN TUFAIL AHLAM', 'MALIMPUNG DUSUN. MALIMPUNG', 'Laki-laki', 'PINRANG', '2019-06-16', 'Islam', 'Belum Sekolah', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315051705090004', 'MUHAMMAD ALMAN', 'PAJALELE DUSUN. PAJALELE', 'Laki-laki', 'PINRANG', '2009-05-17', 'Islam', 'Belum Sekolah', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315051708200001', 'MUHAMMAD QADAFI', 'PAJALELE DUSUNG.PAJALELE', 'Laki-laki', 'PINRANG', '2020-08-17', 'Islam', 'SD', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315051910000001', 'MUHAMMAD SYAIFULLAH', 'PAJALELE DUSUN. MALIMPUNG', 'Laki-laki', 'PINRANG', '2000-10-19', 'Islam', 'S1', 'PELAJAR/MAHASISWA', 'Belum Kawin'),
+('7315052006150001', 'MUHAMMAD AFIQ', 'PAJALELE DUSUN. PAJALELE', 'Laki-laki', 'PINRANG', '2015-06-20', 'Islam', 'Belum Sekolah', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315052007750003', 'RAMLI', 'MALIMPUNG DUSUN. MALIMPUNG', 'Laki-laki', 'TONRONG SADDANG', '1975-07-20', 'Islam', 'Belum Sekolah', 'WIRASWASTA', 'Kawin'),
+('7315052103970001', 'MUH.FIRMAN', 'MALIMPUNG DUSUN. MALIMPUNG', 'Laki-laki', 'MALIMPUNG', '1997-03-21', 'Islam', 'SMA/SMK', 'PELAJAR/MAHASISWA', 'Belum Kawin'),
+('7315052312150001', 'MUHAMMAD HAYKAL', 'TANA CELLA DUSUN. MALIMPUNG', 'Laki-laki', 'PINGRANG', '2015-12-23', 'Islam', 'Belum Sekolah', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315052404890003', 'SUDIRMAN', 'PAJALELE DUSUN. PAJALELE', 'Laki-laki', 'PAJALELE DUSUN. PAJALELE', '1989-04-24', 'Islam', 'SMA/SMK', 'WIRASWASTA', 'Kawin'),
+('7315052409560001', 'RAUF BIN LAHABA', 'PAJALELE DUSUN. MALIMPUNG', 'Laki-laki', 'PINRANG', '1956-09-24', 'Islam', 'SMA/SMK', 'PETANI/PEKEBUN', 'Kawin'),
+('7315052503050004', 'BASRI', 'PAJALELE DUSUN. PAJALELE', 'Laki-laki', 'MALIMPUNG', '2005-03-05', 'Islam', 'Belum Sekolah', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315052505090004', 'MUH. WAFIQ MAGSURA', 'PAJALELE DUSUNG. PAJALELE', 'Laki-laki', 'PINRANG', '2009-05-25', 'Islam', 'Belum Sekolah', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315052505810008', 'JUHASDI LAWANG', 'TANA CELLA', 'Laki-laki', 'PINRANG', '1981-05-25', 'Islam', 'SD', 'PETANI/PEKEBUN', 'Kawin'),
+('7315052607170003', 'MY HABIBIE,S.Pd', 'MALIMPUNG DUSUN. MALIMPUNG', 'Laki-laki', 'MALIMPUNG', '1986-07-10', 'Islam', 'Diploma', 'KARYAWANG HONORER', 'Kawin'),
+('7315052610810001', 'SAFRI', 'TANA CELLA ', 'Laki-laki', 'MALIMPUNG', '1981-10-26', 'Islam', 'SMA/SMK', 'KARYAWANG HONORER', 'Kawin'),
+('7315052701840002', 'FAISAL', 'PAJALELE DUSUN. PAJALELE', 'Laki-laki', 'PAJALELE', '1984-01-27', 'Islam', 'SMA/SMK', 'PETANI/PEKEBUN', 'Kawin'),
+('7315052704180003', 'AZKA ', 'MALIMPUNG DUSUN. MALIMPUNG', 'Laki-laki', 'PINRANG', '2018-04-27', 'Islam', 'Belum Sekolah', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315052901180002', 'MUHAMMAD AQIL', 'PAJALELE DUSUN. PAJALELE', 'Laki-laki', 'PINRANG', '2019-01-29', 'Islam', 'Belum Sekolah', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315053112000053', 'IRWAN', 'TANA CELLA DUSUN. MALIMPUNG', 'Laki-laki', 'PINRANG', '1999-12-30', 'Islam', 'S1', 'PELAJAR/MAHASISWA', 'Belum Kawin'),
+('7315053112330011', 'ABD.GANING', 'TANA CELLA', 'Laki-laki', 'MALIMPUNG', '1933-12-31', 'Islam', 'SMA/SMK', 'PETANI/PEKEBUN', 'Kawin'),
+('7315053112400079', 'LA HAMU H. PABACCI', 'MALIMPUNG', 'Laki-laki', 'PAJALELE', '1940-12-31', 'Islam', 'SD', 'PETANI/PEKEBUN', 'Kawin'),
+('7315053112630096', 'ISMAIL', 'PAJALELE DUSUN. MALIMPUNG', 'Laki-laki', 'MALIMPUNG', '1963-12-31', 'Islam', 'SMA/SMK', 'WIRASWASTA', 'Kawin'),
+('7315053112650073', 'GENDA', 'MALIMPUNG DUSUN. MALIMPUNG', 'Laki-laki', 'MALIMPUNG', '1965-12-31', 'Islam', 'SD', 'PETANI/PEKEBUN', 'Kawin'),
+('7315053112830059', 'MUHAMMAD IDRIS', 'PAJALELE DUSUN. PAJALELE', 'Laki-laki', 'MALIMPUNG', '1983-12-31', 'Islam', 'SMA/SMK', 'WIRASWASTA', 'Kawin'),
+('7315053112860122', 'puri', 'PAJALELE DUSUN. MALIMPUNG', 'Laki-laki', 'PINRANG', '1986-12-31', 'Islam', 'SD', 'WIRASWASTA', 'Kawin'),
+('7315054101500023', 'I BUNGA', 'TANA CELLA DUSUN. MALIMPUNG', 'Perempuan', 'PAJALELE', '1950-01-01', 'Islam', 'SD', 'PEGURUS RUMA TANGGA', 'Cerai Mati'),
+('7315054101690028', 'SALASIA', 'PAJALELE DUSUN. PAJALELE', 'Perempuan', 'PAJALELE', '1969-01-01', 'Islam', 'Belum Sekolah', 'PEGURUS RUMA TANGGA', 'Kawin'),
+('7315054303160002', 'PURNAMA', 'MALIMPUNG DUSUN. MALIMPUNG', 'Perempuan', 'PINRANG', '2016-03-03', 'Islam', 'Belum Sekolah', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315054410680001', 'MULIATI.SPd', 'TANA CELLA', 'Perempuan', 'MALIMPUNG', '1968-04-10', 'Islam', 'Diploma', 'PEGURUS RUMA TANGGA', 'Belum Kawin'),
+('7315054505820003', 'RABANIA', 'PAJALELE DUDSUNG. PAJALELE', 'Perempuan', 'PAJALELE', '1982-05-05', 'Islam', 'SMA/SMK', 'PEGURUS RUMA TANGGA', 'Kawin'),
+('7315054511170001', 'ALIKA HUMAERA. H', 'MALIMPUNG DUSUN. MALIMPUNG', 'Perempuan', 'PINRANG', '2017-05-11', 'Islam', 'Belum Sekolah', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315054605790002', 'NUR HAYATI', 'MALIMPUNG DUSUN. MALIMPUNG', 'Perempuan', 'PINRANG', '1979-06-05', 'Islam', 'SD', 'PEGURUS RUMA TANGGA', 'Kawin'),
+('7315054906150001', 'ANNISA PUTRI', 'PAJALELE DUSUN. PAJALELE', 'Perempuan', 'PINRANG', '2015-01-08', 'Islam', 'Belum Sekolah', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315054909080002', 'NUR SYAFIKA', 'MALIMPUNG DUSUN. MALIMPUNG', 'Perempuan', 'MALIMPUNG', '2008-09-09', 'Islam', 'Belum Sekolah', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315055001470002', 'JAWARIA', 'TANA CELLA', 'Perempuan', 'PAJALELE', '1947-01-10', 'Islam', 'SD', 'PEGURUS RUMA TANGGA', 'Kawin'),
+('7315055003180002', 'NURUL SYAKINAH', 'PAJALELE DUSUN. PAJALELE', 'Perempuan', 'PINRANG', '2018-03-10', 'Islam', 'Belum Sekolah', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315055005060002', 'JURANA', 'MALIMPUNG DUSUN. MALIMPUNG', 'Perempuan', 'MALIMPUNG', '2007-07-10', 'Islam', 'SMA/SMK', 'PELAJAR/MAHASISWA', 'Belum Kawin'),
+('7315055204640002', 'Dra. PAHIRA', 'PAJALELE DUSUN. MALIMPUNG', 'Perempuan', 'MALIMPUNG', '1964-12-04', 'Islam', 'Diploma', 'PEGAWAI NEGERI SIPIL (PNS', 'Kawin'),
+('7315055210890003', 'HUSNAENI', 'MALIMPUNG', 'Perempuan', 'MAROANGIN', '1989-12-10', 'Islam', 'SMA/SMK', 'GURU', 'Kawin'),
+('7315055510580001', 'HAJARA BINTI LAUPE', 'PAJALELE DUSUN. MALIMPUNG', 'Perempuan', 'PINRANG', '1958-10-15', 'Islam', 'SMA/SMK', 'PEGURUS RUMA TANGGA', 'Kawin'),
+('7315055604190001', 'SITI WAFIZAH MAGSURA', 'PAJALELE DUSUNG. PAJALELE', 'Perempuan', 'PINRANG', '2019-04-16', 'Islam', 'Belum Sekolah', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315055606200001', 'MIKAYLA ASHEEQA', 'MALIMPUNG DUSUN. MALIMPUNG', 'Perempuan', 'PINRANG', '2020-06-16', 'Islam', 'Belum Sekolah', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315055708920002', 'RASMAWATI', 'TANA CELLA DUSUN. MALIMPUNG', 'Perempuan', 'MALIMPUNG', '1995-09-17', 'Islam', 'SMA/SMK', 'PEGURUS RUMA TANGGA', 'Kawin'),
+('7315055807990002', 'HASNA', 'PALIPPI DUSUNG.PALIPPI', 'Perempuan', 'KALUPPANG', '1999-07-16', 'Islam', 'SMA/SMK', 'PEGURUS RUMA TANGGA', 'Kawin'),
+('7315055811000001', 'NASRIANI', 'MALIMPUNG DUSUN. MALIMPUNG', 'Perempuan', 'PINRANG', '2000-11-18', 'Islam', 'SMA/SMK', 'PELAJAR/MAHASISWA', 'Belum Kawin'),
+('7315056012850003', 'RISNAWATI', 'PAJALELE DUSUN. PAJALELE', 'Perempuan', 'MALIMPUNG', '1985-12-20', 'Islam', 'SMA/SMK', 'PEGURUS RUMA TANGGA', 'Kawin'),
+('7315056103140002', 'PUTRI AULIYA', 'PAJALELE DUSUN. MALIMPUNG', 'Perempuan', 'PINRANG', '2014-03-21', 'Islam', 'Belum Sekolah', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315056110020001', 'JUSNAENI', 'MALIMPUNG DUSUN. MALIMPUNG', 'Perempuan', 'POLEWALI', '2001-04-07', 'Islam', 'SMA/SMK', 'PELAJAR/MAHASISWA', 'Belum Kawin'),
+('7315056202790001', 'FATIMA', 'MALIMPUNG DUSUN. MALIMPUNG', 'Perempuan', 'MALIMPUNG', '1979-02-22', 'Islam', 'SD', 'PEGURUS RUMA TANGGA', 'Kawin'),
+('7315056205900003', 'HARIYANI', 'PAJALELE DUSUN. MALIMPUNG', 'Perempuan', 'PINRANG', '1990-05-22', 'Islam', 'SMA/SMK', 'PEGURUS RUMA TANGGA', 'Kawin'),
+('7315056412180001', 'SHANUM AIZA', 'PALIPPI DUSUNG.PALIPPI', 'Perempuan', 'PINRANG', '2016-12-21', 'Islam', 'SD', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315056501980001', 'HARTINI', 'TANA CELLA DUSUN. MALIMPUNG', 'Perempuan', 'SABAH', '1998-12-05', 'Islam', 'SMA/SMK', 'PEGURUS RUMA TANGGA', 'Kawin'),
+('7315056604020002', 'WAHYUMI', 'MALIMPUNG DUSUN. MALIMPUNG', 'Perempuan', 'MALIMPUNG', '2002-04-26', 'Islam', 'SD', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315056704130001', 'SITI WAFIZAH MAGSURA', 'PAJALELE DUSUNG. PAJALELE', 'Perempuan', 'PINRANG', '2013-04-27', 'Islam', 'Belum Sekolah', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315056805810001', 'SURIANTI', 'TANA CELLA', 'Perempuan', 'URUNG', '1981-05-28', 'Islam', 'SMA/SMK', 'PEGURUS RUMA TANGGA', 'Kawin'),
+('7315056812120001', 'AQILAH AZ-ZAHRA', 'TANA CELLA', 'Perempuan', 'PINRANG', '2012-12-28', 'Islam', 'Belum Sekolah', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315056906960001', 'MAWAR', 'MALIMPUNG DUSUN. MALIMPUNG', 'Perempuan', 'MALIMPUNG', '1995-05-29', 'Islam', 'SD', 'PEGURUS RUMA TANGGA', 'Kawin'),
+('7315057112480037', 'I SIA', 'MALIMPUNG', 'Perempuan', 'PAJALELE', '1948-12-31', 'Islam', 'SD', 'PEGURUS RUMA TANGGA', 'Kawin'),
+('7315057112480038', 'DARAMMANG', 'TANA CELLA', 'Perempuan', 'MALIMPUNG', '1948-12-31', 'Islam', 'SD', 'PEGURUS RUMA TANGGA', 'Kawin'),
+('7315057112670063', 'NIMA', 'MALIMPUNG DUSUN. MALIMPUNG', 'Perempuan', 'MALIMPUNG', '1967-12-31', 'Islam', 'SD', 'PEGURUS RUMA TANGGA', 'Kawin'),
+('7315091406920002', 'ROSMAN', 'PAJALELE DUSUN. MALIMPUNG', 'Laki-laki', 'PINRANG', '1992-07-14', 'Islam', 'SMA/SMK', 'WIRASWASTA', 'Kawin'),
+('7315111806730001', 'BUSMAN', 'MALIMPUNG DUSUN. MALIMPUNG', 'Laki-laki', 'PINRANG', '1973-06-18', 'Islam', 'S1', 'PAGAWAI NEGERI SIPIL (PNS', 'Kawin'),
+('7315113101050002', 'MUH.NISHAR', 'MALIMPUNG DUSUN. MALIMPUNG', 'Laki-laki', 'PINRANG', '2005-01-31', 'Islam', 'SMA/SMK', 'PELAJAR/MAHASISWA', 'Belum Kawin'),
+('7315114406960001', 'EKA WAHYUNI', 'PAJALELE DUSUN. MALIMPUNG', 'Perempuan', 'PINRANG', '1996-04-06', 'Islam', 'SMA/SMK', 'PEGURUS RUMA TANGGA', 'Kawin'),
+('7315114608100002', 'NUR SYAFIKA', 'MALIMPUNG DUSUN. MALIMPUNG', 'Perempuan', 'PINRANG', '2010-06-06', 'Islam', 'Belum Sekolah', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315115306150002', 'NUR AISYAH', 'PAJALELE DUSUN. MALIMPUNG', 'Perempuan', 'PINRANG', '2015-06-13', 'Islam', 'Belum Sekolah', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315116306160001', 'NUR RAMADHANI', 'PAJALELE DUSUN. MALIMPUNG', 'Perempuan', 'PINRANG', '2016-06-23', 'Islam', 'Belum Sekolah', 'BELUM/TIDAK BEKERJA', 'Belum Kawin'),
+('7315116612810001', 'SUMARNI', 'MALIMPUNG DUSUN. MALIMPUNG', 'Perempuan', 'POLMAS', '1961-12-26', 'Islam', 'SMA/SMK', 'PEGURUS RUMA TANGGA', 'Kawin'),
+('7315117112950118', 'NURLINDAH', 'PAJALELE DUSUN. PAJALELE', 'Perempuan', 'MALAYSIA', '1995-12-31', 'Islam', 'SD', 'PEGURUS RUMA TANGGA', 'Kawin'),
+('7415054504040004', 'RUSNI', 'MALIMPUNG DUSUN. MALIMPUNG', 'Perempuan', 'POLEWALI', '2004-07-01', 'Islam', 'SMA/SMK', 'PELAJAR/MAHASISWA', 'Belum Kawin');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_pindah`
+--
+
+CREATE TABLE `tbl_pindah` (
+  `nik` varchar(16) NOT NULL,
+  `tanggal` date NOT NULL,
+  `tujuan` text NOT NULL,
+  `alasan` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_user`
+--
+
+CREATE TABLE `tbl_user` (
+  `username` varchar(25) NOT NULL,
+  `password` varchar(25) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `level` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tbl_user`
+--
+
+INSERT INTO `tbl_user` (`username`, `password`, `nama`, `level`) VALUES
+('admin', 'admin', 'Administrator', 'admin'),
+('kepala', 'kepala', 'Muhammad Nur', 'kepala');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indeks untuk tabel `tbl_kelahiran`
+--
+ALTER TABLE `tbl_kelahiran`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `kk` (`kk`);
+
+--
+-- Indeks untuk tabel `tbl_kematian`
+--
+ALTER TABLE `tbl_kematian`
+  ADD PRIMARY KEY (`nik`),
+  ADD KEY `nik` (`nik`);
+
+--
+-- Indeks untuk tabel `tbl_kk`
+--
+ALTER TABLE `tbl_kk`
+  ADD PRIMARY KEY (`kk`),
+  ADD KEY `kepala_keluarga` (`kepala_keluarga`),
+  ADD KEY `istri` (`istri`);
+
+--
+-- Indeks untuk tabel `tbl_lokasi`
+--
+ALTER TABLE `tbl_lokasi`
+  ADD PRIMARY KEY (`kk`),
+  ADD KEY `nik` (`kk`);
+
+--
+-- Indeks untuk tabel `tbl_pendatang`
+--
+ALTER TABLE `tbl_pendatang`
+  ADD PRIMARY KEY (`nik`),
+  ADD KEY `nik` (`nik`);
+
+--
+-- Indeks untuk tabel `tbl_penduduk`
+--
+ALTER TABLE `tbl_penduduk`
+  ADD PRIMARY KEY (`nik`);
+
+--
+-- Indeks untuk tabel `tbl_pindah`
+--
+ALTER TABLE `tbl_pindah`
+  ADD PRIMARY KEY (`nik`),
+  ADD KEY `nik` (`nik`);
+
+--
+-- Indeks untuk tabel `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  ADD PRIMARY KEY (`username`);
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `tbl_kelahiran`
+--
+ALTER TABLE `tbl_kelahiran`
+  ADD CONSTRAINT `tbl_kelahiran_ibfk_1` FOREIGN KEY (`kk`) REFERENCES `tbl_kk` (`kk`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `tbl_kematian`
+--
+ALTER TABLE `tbl_kematian`
+  ADD CONSTRAINT `tbl_kematian_ibfk_1` FOREIGN KEY (`nik`) REFERENCES `tbl_penduduk` (`nik`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `tbl_kk`
+--
+ALTER TABLE `tbl_kk`
+  ADD CONSTRAINT `tbl_kk_ibfk_1` FOREIGN KEY (`kepala_keluarga`) REFERENCES `tbl_penduduk` (`nik`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tbl_kk_ibfk_2` FOREIGN KEY (`istri`) REFERENCES `tbl_penduduk` (`nik`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `tbl_lokasi`
+--
+ALTER TABLE `tbl_lokasi`
+  ADD CONSTRAINT `tbl_lokasi_ibfk_1` FOREIGN KEY (`kk`) REFERENCES `tbl_kk` (`kk`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `tbl_pendatang`
+--
+ALTER TABLE `tbl_pendatang`
+  ADD CONSTRAINT `tbl_pendatang_ibfk_1` FOREIGN KEY (`nik`) REFERENCES `tbl_penduduk` (`nik`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `tbl_pindah`
+--
+ALTER TABLE `tbl_pindah`
+  ADD CONSTRAINT `tbl_pindah_ibfk_1` FOREIGN KEY (`nik`) REFERENCES `tbl_penduduk` (`nik`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
